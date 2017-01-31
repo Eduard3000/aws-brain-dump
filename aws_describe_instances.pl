@@ -5,7 +5,7 @@
 use Paws;
 
 my %CONF;
-$CONF{'REGION'}   = 'eu-central-1'; # 
+$CONF{'REGION'}   = 'eu-central-1'; # replace with your region
 
 my $ec2 = Paws->service('EC2', region => $CONF{'REGION'});
 
