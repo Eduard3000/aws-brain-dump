@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-if($ARGV[0] == "" or $ARGV[1] == ""){
+if($ARGV[0] eq "" or $ARGV[1] eq ""){
 print "usage perl $0 AWS-REGION EC2-INSTANCE-ID\n";
 exit 1;
 }
