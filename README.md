@@ -38,3 +38,5 @@ echo $result['AccountAliases'][0];
 echo "\n";
 ?>
 ```
+
+for more <a href="awswhoami.md">awswhoami</a>
