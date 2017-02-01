@@ -2,18 +2,18 @@
 All about AWS
 
 # awswhoami
-1st aws cli + jq (https://github.com/stedolan/jq):
+- 1st aws cli + jq (https://github.com/stedolan/jq):
 put into .bashrc
 ```bash
 alias awswhoami='aws iam list-account-aliases | jq -r '\''.AccountAliases[0]'\'''
 ```
-# then source and 
+ then source and 
 ```bash
 awswhoami
 ```
-# will print your current default account alias
+will print your current default account alias
 
-#2nd perl
+- 2nd perl
 ```perl
 #!/usr/bin/perl
 use Paws;
@@ -21,7 +21,7 @@ my $iam = Paws->service('IAM');
 my $alias   = $iam->ListAccountAliases;
 print $alias->AccountAliases->[0],"\n";
 ```
-#3rd php
+3rd php
 ```php
 <?php
 require '/home/fusers/php/aws/vendor/autoload.php';
@@ -41,7 +41,7 @@ echo "\n";
 
 for more <a href="awswhoami.md">awswhoami</a>
 
-# Get initial windows Administator pw with private key with aws cli jq and openssl
+- Get initial windows Administator pw with private key with aws cli jq and openssl
 ```bash
 aws ec2 get-password-data --instance-id $1 | jq -c -r '.PasswordData' | xargs echo -n | base64 -d -i | openssl rsautl -decrypt -inkey ./your_private_key.pem | xargs echo
 ```
