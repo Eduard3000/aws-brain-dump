@@ -2,12 +2,12 @@
 All about AWS
 
 # awswhoami
-# 1st aws cli + jq (https://github.com/stedolan/jq):
-# put into .bashrc
+1st aws cli + jq (https://github.com/stedolan/jq):
+put into .bashrc
 ```bash
 alias awswhoami='aws iam list-account-aliases | jq -r '\''.AccountAliases[0]'\'''
 ```
-# then
+# then source and 
 ```bash
 awswhoami
 ```
