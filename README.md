@@ -43,6 +43,6 @@ for more <a href="awswhoami.md">awswhoami</a>
 
 # Get initial windows Administator pw with private key with aws cli jq and open
 ```bash
-aws ec2 get-password-data --instance-id $1 | jq -c -r '.PasswordData' | xargs echo -n | base64 -d | openssl rsautl -decrypt -inkey ./your_private_key.pem | xargs echo
+aws ec2 get-password-data --instance-id $1 | jq -c -r '.PasswordData' | xargs echo -n | base64 -d -i | openssl rsautl -decrypt -inkey ./your_private_key.pem | xargs echo
 ```
 <a href="aws_get_initial_windows_administrator_pw.sh">BASH</a> and for pure perl see <a href="aws_get_initial_windows_administrator_pw.pl">this</a>
