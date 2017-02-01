@@ -21,7 +21,7 @@ my $iam = Paws->service('IAM');
 my $alias   = $iam->ListAccountAliases;
 print $alias->AccountAliases->[0],"\n";
 ```
-3rd php
+- 3rd php
 ```php
 <?php
 require '/home/fusers/php/aws/vendor/autoload.php';
