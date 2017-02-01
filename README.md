@@ -41,7 +41,7 @@ echo "\n";
 
 for more <a href="awswhoami.md">awswhoami</a>
 
-- Get initial windows Administator pw with private key with aws cli jq and openssl
+- Get initial windows Administator pw with private key, aws cli, jq and openssl
 ```bash
 aws ec2 get-password-data --instance-id $1 | jq -c -r '.PasswordData' | xargs echo -n | base64 -d -i | openssl rsautl -decrypt -inkey ./your_private_key.pem | xargs echo
 ```
