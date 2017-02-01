@@ -45,4 +45,4 @@ for more <a href="awswhoami.md">awswhoami</a>
 ```bash
 aws ec2 get-password-data --instance-id $1 | jq -c -r '.PasswordData' | xargs echo -n | base64 -d | openssl rsautl -decrypt -inkey ./your_private_key.pem | xargs echo
 ```
-<a href="aws_get_initial_windows_administrator_pw.sh?raw">BASH</a> and for pure perl see <a href="aws_get_initial_windows_administrator_pw.pl">this</a>
+<a href="aws_get_initial_windows_administrator_pw.sh">BASH</a> and for pure perl see <a href="aws_get_initial_windows_administrator_pw.pl">this</a>
