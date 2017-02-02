@@ -38,6 +38,10 @@ echo $result['AccountAliases'][0];
 echo "\n";
 ?>
 ```
+- 4th powershell, its simple, but first start is a bit slooow...
+```powershell
+Get-IAMAccountAlias
+```
 
 for more <a href="awswhoami.md">awswhoami</a>
 
