@@ -72,3 +72,7 @@ client = boto3.client('iam')
 response = client.list_account_aliases()
 print (response['AccountAliases'][0])
 ```
+#7th powershell, its simple, but first start is a bit slooow...
+```powershell
+Get-IAMAccountAlias
+```
