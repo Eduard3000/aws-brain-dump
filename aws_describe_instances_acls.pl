@@ -70,13 +70,11 @@ foreach my $sgp (@{$dsgp->SecurityGroups}){
 	
 	foreach my $ipp (@{$sgp->IpPermissions}){
 
-		# p $ipp;
 		printf "-->ACL-IN: %16s %16s %8s %8s\n",(defined($ipp->IpRanges->[0]) ? $ipp->IpRanges->[0]->CidrIp : 'ALL'),(($ipp->IpProtocol == -1) ? 'ALL' : $ipp->IpProtocol),(($ipp->FromPort == -1) ? 'ALL' : $ipp->FromPort),(($ipp->ToPort == -1) ? 'ALL' : $ipp->ToPort);
 		} 
 
 	        foreach my $ipp (@{$sgp->IpPermissionsEgress}){
 
-                # p $ipp;
                 printf "-->ACLOUT: %16s %16s %8s %8s\n",(defined($ipp->IpRanges->[0]) ? $ipp->IpRanges->[0]->CidrIp : 'ALL'),(($ipp->IpProtocol == -1) ? 'ALL' : $ipp->IpProtocol),(($ipp->FromPort == -1) ? 'ALL' : $ipp->FromPort),(($ipp->ToPort == -1) ? 'ALL' : $ipp->ToPort);
         	} 
 
