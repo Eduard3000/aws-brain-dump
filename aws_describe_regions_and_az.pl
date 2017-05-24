@@ -13,7 +13,7 @@ printf "%-15s: %20s\n","Region","AZ-List";
 
 my $regc,$azc = 0;
 
-foreach my $region (@{$dr->Regions}){
+foreach my $region (sort { $a->RegionName cmp $b->RegionName } @{$dr->Regions}){
 
 	my $rn  = $region->RegionName;
 	printf "%-15s: ",$rn;
