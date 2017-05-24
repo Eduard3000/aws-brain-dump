@@ -11,11 +11,13 @@ my $dr  = $ec2->DescribeRegions();
 
 printf "%-15s: %20s\n","Region","AZ-List";
 
+my $regc,$azc = 0;
+
 foreach my $region (@{$dr->Regions}){
 
 	my $rn  = $region->RegionName;
 	printf "%-15s: ",$rn;
-	
+	$regc++;	
 	my $ec3 = Paws->service('EC2', region => $rn);
 
 	my $daz = $ec3->DescribeAvailabilityZones();
@@ -23,8 +25,12 @@ foreach my $region (@{$dr->Regions}){
 	foreach my $az (@{$daz->AvailabilityZones}){
 
 		printf "%15s ",$az->ZoneName;
+		$azc++;
 	
 	}
 	print "\n";
 }
+
+printf "Found %3d AZs in %3d Regions\n,",$azc,$regc;
+
 
