@@ -13,8 +13,8 @@ $ec2di = $ec2->DescribeInstances();
 
 foreach $ec2res (@{$ec2di->Reservations}){
   foreach my $ec2ins (@{$ec2res->Instances}){
-
-	printf "EC2: %20s; IP: %-16s;", $ec2ins->InstanceId,$ec2ins->PrivateIpAddress;
+	
+ 	printf "EC2: %20s; IP: %-16s; PubIP: %-16s", $ec2ins->InstanceId,$ec2ins->PrivateIpAddress,$ec2ins->PublicIpAddress;
 	
 	my ($nametag) = $ec2->DescribeTags(Filters => [{Name => 'resource-id', Values => [$ec2ins->InstanceId]},{Name => 'key', Values => ['Name']}]);
 
