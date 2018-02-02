@@ -1,4 +1,3 @@
-matrix-tech-tws
                        BillingFullAccess                   aws-portal:*
 
                      EC2-View-Start-Stop                  ec2:Describe*

@@ -50,3 +50,7 @@ for more <a href="awswhoami.md">awswhoami</a>
 aws ec2 get-password-data --instance-id $1 | jq -c -r '.PasswordData' | xargs echo -n | base64 -d -i | openssl rsautl -decrypt -inkey ./your_private_key.pem | xargs echo
 ```
 <a href="aws_get_initial_windows_administrator_pw.sh">BASH</a> and for perl version see <a href="aws_get_initial_windows_administrator_pw.pl">this</a>
+
+aws list all policies and their actions, incl. dump from "today"(sic)
+
+
